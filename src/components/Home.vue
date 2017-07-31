@@ -30,10 +30,10 @@
       return {
         contents: [
           {
-            imageUrl: 'http://marketingland.com/wp-content/ml-loads/2014/09/content-marketing-ss-1920-800x450.jpg', id: 'aaa12312313aaa', title: 'Trying Content 1'
+            imageUrl: 'https://bitcoin.org/img/icons/opengraph.png', id: 'aaa12312313aaa', title: 'Trying Content 1'
           },
           {
-            imageUrl: 'http://marketingland.com/images/authors/JimYu-lg.jpg', id: 'aaaa41231123aa2', title: 'Trying Content 2'
+            imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqL_dAHmx6dx9W1ITcKJFryZEuLJYavVHJuDDiXu6lq85db8fMtQ', id: 'aaaa41231123aa2', title: 'Trying Content 2'
           }
         ]
       }
