@@ -6,6 +6,7 @@ import CreateContent from '@/components/Content/createContent'
 import Profile from '@/components/User/Profile'
 import Signin from '@/components/User/Signin'
 import Signup from '@/components/User/Signup'
+import Content from '@/components/Content/Content'
 
 Vue.use(Router)
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/content/new',
       name: 'CreateContent',
       component: CreateContent
+    },
+    {
+      path: '/content/:id',
+      name: 'Content',
+      component: Content
     },
     {
       path: '/profile',
