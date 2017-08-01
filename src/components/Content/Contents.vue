@@ -20,8 +20,8 @@
               </div>
               </v-card-title>
               <v-card-actions>
-                <v-btn flat :to=" '/content/' + content.id"> <v-icon left light >arrow_forward</v-icon>
-                  Action </v-btn>
+                <a v-bind:href="content.link"><v-btn flat><v-icon left light >arrow_forward</v-icon>
+                  Link </v-btn></a>
               </v-card-actions>
             </v-flex>
               </v-layout>
@@ -42,3 +42,14 @@
   }
 
 </script>
+
+<style scoped>
+a:link    {
+  /* Applies to all unvisited links */
+  text-decoration:  none;
+  font-weight:      bold;
+  background-color: #364caa;
+  color:            blue;
+  }
+
+</style>

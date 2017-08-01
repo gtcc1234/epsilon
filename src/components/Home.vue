@@ -1,5 +1,13 @@
 <template>
   <v-container>
+    <v-layout row wrap class="mt-2">
+      <v-flex xs12>
+        <v-carousel style="cursor: pointer">
+          <v-carousel-item v-for="content in contents" :src="content.imageUrl" :key="content.id" @click="onLoadContent(content.id)"><div  class="title"> {{ content.title }}</div>
+          </v-carousel-item>
+        </v-carousel>
+      </v-flex>
+    </v-layout>
     <v-layout row wrap class="mb-2">
       <v-flex xs12 sm6 class="text-sm-right text-xs-center">
         <v-btn large router to="/contents" class="info"> See Contents </v-btn>
@@ -9,16 +17,8 @@
       </v-flex>
     </v-layout>
     <v-layout row wrap class="mt-2">
-      <v-flex xs12>
-        <v-carousel style="cursor: pointer">
-          <v-carousel-item v-for="content in contents" :src="content.imageUrl" :key="content.id" @click="onLoadContent(content.id)"><div  class="title"> {{ content.title }}</div>
-          </v-carousel-item>
-        </v-carousel>
-      </v-flex>
-    </v-layout>
-    <v-layout row wrap class="mt-2">
       <v-flex xs12 class="text-xs-center">
-        <p> Join Us </p>
+        <p> Dummy Test</p>
       </v-flex>
     </v-layout>
   </v-container>
