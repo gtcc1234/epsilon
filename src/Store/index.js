@@ -19,10 +19,22 @@ export const store = new Vuex.Store({
     }
   },
   mutations: {
-
+    createContent (state, payload) {
+      state.loadedContents.push(payload)
+    }
   },
   actions: {
-
+    createContent ({commit}, payload) {
+      const content = {
+        title: payload.title,
+        link: payload.link,
+        imageUrl: payload.imageUrl,
+        description: payload.description,
+        date: payload.date
+      }
+      // Reach out to firebase to store
+      commit('createContent', content)
+    }
   },
   getters: {
     loadedContents (state) {
