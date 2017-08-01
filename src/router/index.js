@@ -30,6 +30,7 @@ export default new Router({
     {
       path: '/content/:id',
       name: 'Content',
+      props: true,
       component: Content
     },
     {

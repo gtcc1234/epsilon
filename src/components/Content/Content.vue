@@ -4,14 +4,14 @@
       <v-flex xs12>
         <v-card>
           <v-card-title>
-            <h6 class="primary--text">My Content</h6>
+            <h6 class="primary--text">{{ content.title }}</h6>
           </v-card-title>
           <v-card-media
-             src="https://bitcoin.org/img/icons/opengraph.png"
+             :src="content.imageUrl"
              height="300px"
            ></v-card-media>
            <v-card-text>
-             <div class="info--text"> CLICK THE LINK</div>
+             <div class="info--text">{{ content.date}}</div>
              <div> Oliver twisting his foot the book sought the foot.  Dummy Text</div>
            </v-card-text>
            <v-card-actions>
@@ -24,3 +24,17 @@
   </v-container>
 
 </template>
+
+
+<script>
+
+export default {
+  props: ['id'],
+  computed: {
+    content () {
+      return this.$store.getters.loadedContent(this.id)
+    }
+  }
+}
+
+</script>

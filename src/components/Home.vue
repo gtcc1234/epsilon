@@ -26,16 +26,9 @@
 
 <script>
   export default {
-    data () {
-      return {
-        contents: [
-          {
-            imageUrl: 'https://bitcoin.org/img/icons/opengraph.png', id: '1', title: 'Trying Content 1'
-          },
-          {
-            imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqL_dAHmx6dx9W1ITcKJFryZEuLJYavVHJuDDiXu6lq85db8fMtQ', id: 'aaaa41231123aa2', title: 'Trying Content 2'
-          }
-        ]
+    computed: {
+      contents () {
+        return this.$store.getters.featuredContents
       }
     },
     methods: {
