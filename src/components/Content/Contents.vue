@@ -76,7 +76,7 @@
           <v-layout row>
             <h6 class="primary--text">USD Exchange Rate</h6>
           </v-layout>
-        <v-layout row class="mb-2">
+        <v-layout row class="mb-4">
           <v-flex>
             <v-card>
               <v-flex>
@@ -95,30 +95,20 @@
           </v-flex>
         </v-layout>
 
-        <v-layout row>
-          <h6 class="primary--text">Subscribe</h6>
+        <v-layout row class="mb-0">
+          <h6 class="primary--text">Weekly Newsletter</h6>
         </v-layout>
 
-        <v-layout row class="mb-2">
-          <v-flex>
-            <v-card>
-              Weekly Newsletter
-            </v-card>
-          </v-flex>
-        </v-layout>
-
-
-      <v-layout row>
-        <h6 class="primary--text">Newest</h6>
-      </v-layout>
-
-      <v-layout row>
-        <v-flex>
-          <v-card>
-            Newest Stuff
-          </v-card>
+        <v-layout row class="mt-0 mb-2">
+          <v-flex xs10>
+            <form @submit.prevent="onCreateContent">
+            <v-text-field class="mb-0" name="email" label="E-mail" id="email" v-model="email"></v-text-field>
+            <v-btn class="primary mt-0" :disabled="!formIsValid" type="Submit">Subscribe</v-btn>
+            </form>
         </v-flex>
       </v-layout>
+
+
 
 
     </v-flex>
@@ -133,10 +123,14 @@
       return {
         btc: '',
         eth: '',
-        ltc: ''
+        ltc: '',
+        email: ''
       }
     },
     computed: {
+      formIsValid () {
+        return this.email !== ''
+      },
       contents () {
         return this.$store.getters.featuredContents
       },
