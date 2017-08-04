@@ -63,7 +63,8 @@
         menuItems: [
           { title: 'Home', link: '/contents' },
           { title: 'About', link: '/about' },
-          { title: 'List', link: '/list' }
+          { title: 'List', link: '/list' },
+          { title: 'Create', link: '/content/new' }
         ]
       }
     }

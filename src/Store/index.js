@@ -19,13 +19,13 @@ export const store = new Vuex.Store({
         imageUrl: 'http://www.businessinsider.com/', id: '4', title: 'This is the headline for article 4', date: '2017-07-10', link: 'http://www.businessinsider.com/global-fintech-funding-rebounds-2017-7', author: 'John Doe', publication: 'Publication', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis'
       },
       {
-        imageUrl: '', id: '5', title: 'This is the headline for article 5', date: '2017-07-04', link: 'http://technode.com/2017/07/20/ant-financial-invests-shanghai-based-fintech-startup-vfinance/', author: 'John Doe', publication: 'Publication', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis'
+        imageUrl: '', id: '5', title: 'This is the headline for article 5', date: '2017-07-31', link: 'http://technode.com/2017/07/20/ant-financial-invests-shanghai-based-fintech-startup-vfinance/', author: 'John Doe', publication: 'Publication', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis'
       },
       {
-        imageUrl: '', id: '6', title: 'This is the headline for article 6', date: '2017-07-04', link: 'http://technode.com/2017/07/20/ant-financial-invests-shanghai-based-fintech-startup-vfinance/', author: 'John Doe', publication: 'Publication', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis'
+        imageUrl: '', id: '6', title: 'This is the headline for article 6', date: '2017-07-30', link: 'http://technode.com/2017/07/20/ant-financial-invests-shanghai-based-fintech-startup-vfinance/', author: 'John Doe', publication: 'Publication', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis'
       },
       {
-        imageUrl: '', id: '7', title: 'This is the headline for article 7', date: '2017-07-04', link: 'http://technode.com/2017/07/20/ant-financial-invests-shanghai-based-fintech-startup-vfinance/', author: 'John Doe', publication: 'Publication', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis'
+        imageUrl: '', id: '7', title: 'This is the headline for article 7', date: '2017-07-29', link: 'http://technode.com/2017/07/20/ant-financial-invests-shanghai-based-fintech-startup-vfinance/', author: 'John Doe', publication: 'Publication', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis'
       }
     ],
     user: {
@@ -55,7 +55,9 @@ export const store = new Vuex.Store({
   },
   getters: {
     loadedContents (state) {
-      return state.loadedContents
+      return state.loadedContents.sort((contentA, contentB) => {
+        return contentA.date > contentB.date
+      })
     },
     featuredContents (state, getters) {
       return getters.loadedContents.slice(0, 6)
