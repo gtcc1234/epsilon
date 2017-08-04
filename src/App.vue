@@ -62,7 +62,8 @@
         sideNav: false,
         menuItems: [
           { title: 'Home', link: '/contents' },
-          { title: 'About', link: '/about' }
+          { title: 'About', link: '/about' },
+          { title: 'List', link: '/list' }
         ]
       }
     }

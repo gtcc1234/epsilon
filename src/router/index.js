@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import About from '@/components/About'
+import List from '@/components/Content/List'
 import Contents from '@/components/Content/Contents'
 import CreateContent from '@/components/Content/createContent'
 import Profile from '@/components/User/Profile'
@@ -22,6 +23,11 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: About
+    },
+    {
+      path: '/list',
+      name: 'List',
+      component: List
     },
     {
       path: '/contents',
