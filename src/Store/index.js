@@ -7,16 +7,16 @@ export const store = new Vuex.Store({
   state: {
     loadedContents: [
       {
-        imageUrl: 'https://bitcoin.org/img/icons/opengraph.png', id: '1', title: 'Bitcoin', date: '2017-07-17', link: 'https://bitcoin.org', author: 'John Doe', publication: 'Publication'
+        imageUrl: 'https://bitcoin.org/img/icons/opengraph.png', id: '1', title: 'This is the headline for article 1', date: '2017-07-17', link: 'https://bitcoin.org', author: 'John Doe', publication: 'Publication'
       },
       {
-        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqL_dAHmx6dx9W1ITcKJFryZEuLJYavVHJuDDiXu6lq85db8fMtQ', id: 'aaaa41231123aa2', title: 'Etherium', date: '2017-07-19', link: 'https://www.ethereum.org', author: 'John Doe', publication: 'Publication'
+        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqL_dAHmx6dx9W1ITcKJFryZEuLJYavVHJuDDiXu6lq85db8fMtQ', id: 'aaaa41231123aa2', title: 'This is the headline for article 2', date: '2017-07-19', link: 'https://www.ethereum.org', author: 'John Doe', publication: 'Publication'
       },
       {
-        imageUrl: 'http://technode.com/wp-content/uploads/2015/12/technode-logo-ob-200.png', id: '3', title: 'Technode', date: '2017-07-04', link: 'http://technode.com/2017/07/20/ant-financial-invests-shanghai-based-fintech-startup-vfinance/', author: 'John Doe', publication: 'Publication'
+        imageUrl: 'http://technode.com/wp-content/uploads/2015/12/technode-logo-ob-200.png', id: '3', title: 'This is the headline for article 3', date: '2017-07-04', link: 'http://technode.com/2017/07/20/ant-financial-invests-shanghai-based-fintech-startup-vfinance/', author: 'John Doe', publication: 'Publication'
       },
       {
-        imageUrl: 'http://www.businessinsider.com/', id: '4', title: 'Business Insider', date: '2017-07-10', link: 'http://www.businessinsider.com/global-fintech-funding-rebounds-2017-7', author: 'John Doe', publication: 'Publication'
+        imageUrl: 'http://www.businessinsider.com/', id: '4', title: 'This is the headline for article 4', date: '2017-07-10', link: 'http://www.businessinsider.com/global-fintech-funding-rebounds-2017-7', author: 'John Doe', publication: 'Publication'
       }
     ],
     user: {
@@ -46,9 +46,7 @@ export const store = new Vuex.Store({
   },
   getters: {
     loadedContents (state) {
-      return state.loadedContents.sort((contentA, contentB) => {
-        return contentA.date > contentB.date
-      })
+      return state.loadedContents
     },
     featuredContents (state, getters) {
       return getters.loadedContents.slice(0, 5)
