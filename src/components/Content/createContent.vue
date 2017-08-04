@@ -20,6 +20,16 @@
         </v-layout>
         <v-layout row>
           <v-flex xs12 sm6 offset-sm3>
+            <v-text-field name="author" label="Author" id="author" v-model="author" required></v-text-field>
+          </v-flex>
+        </v-layout>
+        <v-layout row>
+          <v-flex xs12 sm6 offset-sm3>
+            <v-text-field name="publication" label="Publication" id="publication" v-model="publication" required></v-text-field>
+          </v-flex>
+        </v-layout>
+        <v-layout row>
+          <v-flex xs12 sm6 offset-sm3>
             <v-text-field name="imageUrl" label="Image URL" id="image-url" v-model="imageUrl"></v-text-field>
           </v-flex>
         </v-layout>
@@ -56,7 +66,7 @@
     },
     computed: {
       formIsValid () {
-        return this.title !== '' && this.link !== '' && this.description !== ''
+        return this.title !== '' && this.link !== '' && this.description !== '' && this.author !== '' && this.publication !== ''
       }
     },
     methods: {
@@ -69,6 +79,8 @@
           link: this.link,
           imageUrl: this.imageUrl,
           description: this.description,
+          author: this.author,
+          publication: this.publication,
           date: new Date()
         }
         this.$store.dispatch('createContent', contentData)
