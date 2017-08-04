@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
+import About from '@/components/About'
 import Contents from '@/components/Content/Contents'
 import CreateContent from '@/components/Content/createContent'
 import Profile from '@/components/User/Profile'
@@ -16,6 +17,11 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/about',
+      name: 'About',
+      component: About
     },
     {
       path: '/contents',
