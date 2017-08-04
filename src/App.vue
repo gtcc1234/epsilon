@@ -44,7 +44,7 @@
 
       <v-spacer></v-spacer>
       <div id="date">
-      <p class="white--text mb0"> 08/04/2017 </p>
+      <p class="white--text mb0"> August 4, 2017 </p>
     </div>
     </v-toolbar>
   </div>
