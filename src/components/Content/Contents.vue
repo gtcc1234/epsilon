@@ -1,5 +1,8 @@
 <template>
   <v-container>
+    <v-layout row>
+      <h6 class="primary--text">Top News</h6>
+    </v-layout>
       <v-layout row wrap v-for="content in contents" :key="content.id" class="mb-2">
       <v-flex xs12 sm10 md8 offset-sm1 offset-md2>
           <v-card class="info" >

@@ -40,7 +40,12 @@
         <v-btn flat v-for="item in menuItems" :key="item.title" router :to="item.link">
           {{ item.title }}
         </v-btn>
-      </v-toolbar-items>
+        </v-toolbar-items>
+
+      <v-spacer></v-spacer>
+      <div id="date">
+      <p class="white--text mb0"> 08/04/2017 </p>
+    </div>
     </v-toolbar>
   </div>
 
@@ -76,8 +81,9 @@
     color: blue
   }
 
-  #menu {
-
+  #date {
+    font-align: center-block
+    height: 1.8em
   }
 
 </style>
