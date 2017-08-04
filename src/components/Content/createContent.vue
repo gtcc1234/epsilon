@@ -59,6 +59,8 @@
     data () {
       return {
         title: '',
+        author: '',
+        publication: '',
         link: '',
         imageUrl: '',
         description: ''
