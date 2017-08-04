@@ -74,31 +74,22 @@
 
       <v-flex class="hidden-xs-only " sm4 md3 offset-md1>
           <v-layout row>
-            <h6 class="primary--text">Tracker </h6>
+            <h6 class="primary--text">USD Exchange Rate</h6>
           </v-layout>
         <v-layout row class="mb-2">
           <v-flex>
             <v-card>
-              <v-flex row10>
-                Tracker Content
+              <v-flex>
+                Currency:
               </v-flex>
               <v-flex>
-
+                Bitcoin ${{ btc }}
               </v-flex>
               <v-flex>
-
+                Etherium ${{ eth }}
               </v-flex>
               <v-flex>
-
-              </v-flex>
-              <v-flex>
-
-              </v-flex>
-              <v-flex>
-
-              </v-flex>
-              <v-flex>
-
+                Litecoin ${{ ltc }}
               </v-flex>
             </v-card>
           </v-flex>
@@ -138,12 +129,38 @@
 
 <script>
   export default {
+    data () {
+      return {
+        btc: '',
+        eth: '',
+        ltc: ''
+      }
+    },
     computed: {
       contents () {
         return this.$store.getters.featuredContents
       },
       editors () {
         return this.$store.getters.editContents
+      }
+    },
+    mounted () {
+      this.load()
+    },
+    methods: {
+      load () {
+        fetch('http://www.coincap.io/page/ETH').then(res => res.json()).then(rest => {
+          this.eth = rest.usdPrice
+          console.log(this.eth)
+        })
+        fetch('http://www.coincap.io/page/BTC').then(res => res.json()).then(rest => {
+          this.btc = rest.usdPrice
+          console.log(this.btc)
+        })
+        fetch('http://www.coincap.io/page/LTC').then(res => res.json()).then(rest => {
+          this.ltc = rest.usdPrice
+          console.log(this.ltc)
+        })
       }
     }
   }
